@@ -1,0 +1,18 @@
+                if event.key == pygame.K_RIGHT:
+                    player.move_right(30)
+                if event.key == pygame.K_LEFT:
+                    player.move_left(30)
+                if event.key == pygame.K_UP:
+                    player.move_up(30)
+                if event.key == pygame.K_DOWN:
+                    player.move_down(30)
+
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_RIGHT:
+                    player.move_right(-30)
+                if event.key == pygame.K_LEFT:
+                    player.move_left(-30)
+                if event.key == pygame.K_UP:
+                    player.move_up(-30)
+                if event.key == pygame.K_DOWN:
+                    player.move_down(-30)
