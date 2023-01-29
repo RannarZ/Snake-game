@@ -7,3 +7,4 @@ pygame.display.set_caption("Snake")
 screen = pygame.display.set_mode((window_height, window_width))
 prev_pos = None
 backgroundsqr = pygame.Surface((30, 30))
+movement_dir = ["N", "S", "E", "W"]

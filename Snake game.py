@@ -33,6 +33,7 @@ def drawGrid():
 
 def main():
     pygame.init()
+    movement = ""
     while True:
         drawGrid()
         for event in pygame.event.get():
@@ -45,18 +46,22 @@ def main():
                 if event.key == pygame.K_ESCAPE:
                     pygame.quit()
                     sys.exit()
-                if event.key == pygame.K_LEFT:
+                if event.key == pygame.K_LEFT and movement != "E":
                     player.change_x = -15
                     player.change_y = 0
-                if event.key == pygame.K_RIGHT:
+                    movement = "W"
+                if event.key == pygame.K_RIGHT and movement != "W":
                     player.change_x = 15
                     player.change_y = 0
-                if event.key == pygame.K_UP:
+                    movement = "E"
+                if event.key == pygame.K_UP and movement != "S":
                     player.change_y = -15
                     player.change_x = 0
-                if event.key == pygame.K_DOWN:
+                    movement = "N"
+                if event.key == pygame.K_DOWN and movement != "N":
                     player.change_y = 15
                     player.change_x = 0
+                    movement = "S"
 
         player.rect.x += player.change_x
         player.rect.y += player.change_y
@@ -64,7 +69,7 @@ def main():
         ta.screen.fill((0, 0, 0))
         drawGrid()
         active_sprite_list.draw(ta.screen)
-        clock.tick(10)
+        clock.tick(11)
         if player.rect.x <= 30 or player.rect.x >= 540:
             pygame.quit()
             sys.exit()
