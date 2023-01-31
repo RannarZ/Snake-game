@@ -3,7 +3,6 @@ import Taust_asjad
 
 white = (200, 200, 200)
 red = (255, 0, 0)
-vec = pygame.math.Vector2
 
 
 class Mangija(pygame.sprite.Sprite):
@@ -17,14 +16,18 @@ class Mangija(pygame.sprite.Sprite):
 
     def move_right(self, move_x):
         self.change_x += move_x
+        self.change_y = 0
 
     def move_left(self, move_x):
         self.change_x -= move_x
+        self.change_y = 0
 
     def move_up(self, move_y):
+        self.change_x = 0
         self.change_y -= move_y
 
     def move_down(self, move_y):
+        self.change_x = 0
         self.change_y += move_y
 
     def update(self):
